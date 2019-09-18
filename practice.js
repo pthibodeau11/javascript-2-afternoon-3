@@ -28,7 +28,10 @@
 */
 
 // Code Here 
-
+var array = [];
+var first = function(array, cb){
+  cb(array[0]);
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -48,7 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+var last = function(array, cb){
+  cb(array[array.length - 1]);
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +71,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+var multiply = function(num1, num2, cb){
+  cb(num1 * num2);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -86,6 +93,12 @@ multiply(4, 3, function(answer){
 
 //Code Here 
 
+var contains = function(array, name, cb){
+  if (array.includes(name)){
+    cb(true);
+  }
+  else {cb(false)}
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -106,7 +119,10 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
+var uniq = function(array, cb){
+  var newArray = [...new Set(array)];
+  cb(newArray);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
