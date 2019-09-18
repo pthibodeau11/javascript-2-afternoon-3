@@ -120,8 +120,8 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 var uniq = function(array, cb){
-  var newArray = [...new Set(array)];
-  cb(newArray);
+  var uniqArr = [...new Set(array)];
+  cb(uniqArr);
 }
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -140,6 +140,11 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+var each = function(names, cb){  
+  for (let i = 0; i < names.length; i++){
+    cb(names[i], i);
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -156,7 +161,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+var getUserById = function(users, id, cb){
+  for (let i = 0; i < users.length; i++){
+    if (users[i].id === id) {
+      cb(users[i]);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
